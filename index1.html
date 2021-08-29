@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Введите Ваши ФИО"> 
+    <button onclick="check()">Проверка</button><br>
+    
+    <input type="text"  class="name" placeholder="Фамилия">
+    <input type="text"  class="name"  placeholder="Имя">
+    <input type="text"  class="name" placeholder="Отчество">
+    
+
+
+    <script>
+            let elem = document.getElementById('input');
+            let elems =document.getElementsByClassName('name');
+            
+        function check(str){
+            if (elem.value !== 0) {
+		            let str = elem.value;
+		            let arr = str.toLowerCase().split(' ');
+                    
+		    for (let i = 0; i < arr.length; i++) {
+                    arr[i] = arr[i].split(''); 
+		            arr[i][0] = arr[i][0].toUpperCase();
+		            arr[i] = arr[i].join('');
+                    elems[i].value = arr[i];
+		    }
+	        }
+
+            str = arr.join(' ');
+	        return str;
+            }
+    </script>
+</body>
+
+</html>

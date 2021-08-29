@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="margin-bottom: 20px; background-color: rgb(230, 216, 222);" onclick="getRandomNumber()">Нажми меня!</button>
+    <div class="title"> <span class="out" id="result"></span></div><hr>
+    <div class="title">Максимальное число : <span class="out" id="result1"></span> </div>
+    <div class="title">Минимальное число : <span class="out" id="result2"></span></div>
+    <div class="title"> Среднее арифметическое : <span class="out" id="result3"></span></div>
+    <div class="title"> Сумма чисел :  <span class="out" id="result4"></span></div>
+    <div class="title"> Произведение чисел : <span class="out" id="result5"></span></div>
+
+<script>
+
+function getRandomNumber(){
+let array = [];
+let count = 0;
+    
+for(let i=0 ; i<10;i++){
+value = Math.round((Math.random() - 0.5) * 10 * 2);
+array.push(value);      
+document.getElementById('result').innerHTML  = array;
+    
+function average(array) {
+let sum = 0;
+count = array.length;
+for (i = 0; i < count; i++) {
+sum += array[i];
+}
+return Math.round(sum/count);
+}
+
+document.getElementById('result3').innerHTML  = average(array);
+    
+function sum(array){
+let sum = 0;
+for (i = 0; i < count; i++) {
+sum += array[i];
+}
+return sum;
+}
+
+document.getElementById('result4').innerHTML  = sum(array);
+    
+function mult(array){
+let mult = 1;
+for (i = 0; i < count; i++) {
+mult *= array[i];
+}
+return mult;
+}
+
+document.getElementById('result5').innerHTML  = mult(array);
+}
+
+let max = Math.max.apply(null,array);
+document.getElementById('result1').innerHTML  = max;
+let min = Math.min.apply(null,array);
+document.getElementById('result2').innerHTML  = min;  
+}
+</script>
+</body>
+</html>
